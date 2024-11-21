@@ -80,11 +80,6 @@
                             <descriptorRefs>
                                 <descriptorRef>jar-with-dependencies</descriptorRef>
                             </descriptorRefs>
-                            <archive>
-                                <manifest>
-                                    <mainClass>org.example.Main</mainClass> <!-- Replace with your main class -->
-                                </manifest>
-                            </archive>
                         </configuration>
                     </execution>
                 </executions>

@@ -13,9 +13,23 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 
+/**
+ * Hello World example of AWS lambda
+ */
 public class Hello implements RequestHandler<Map<String, Object>, Map<String, String>> {
 
     /**
+     *
+     * In AWS Lambda, a handleRequest method is the entry point of your Lambda function.
+     * It processes incoming events and generates responses.
+     *
+     * Create a New Lambda Function
+     *    Click on Create function.
+     *    Specify the handler is the entry point to your function
+     *
+     *    AWS Lambda expects the handler to follow this format:
+     *    package.ClassName::methodName
+     *
      * POST method
      * @param input
      * @param context
@@ -33,6 +47,8 @@ public class Hello implements RequestHandler<Map<String, Object>, Map<String, St
         System.out.println("trying to sabe the file: "+fileName);
 
         try {
+
+            // write an object (a json file) to S3
             String jsonData = objectMapper.writeValueAsString("{ \"id\" : 1 }");
 
             S3Client s3 = S3Client.builder().build();
